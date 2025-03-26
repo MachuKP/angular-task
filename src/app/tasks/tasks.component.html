@@ -1,0 +1,20 @@
+@if (isOpenAddTaskModal) {
+<app-new-task [userId]="user().id" (close)="onCloseAddTask()" />
+}
+
+<section id="tasks">
+  <header>
+    <h2>{{ user().name }}'s Tasks</h2>
+    <menu>
+      <button (click)="onOpenAddTask()">Add Task</button>
+    </menu>
+  </header>
+  <ul *ngIf="selectedUserTasks().length > 0; else fallback">
+    <li *ngFor="let task of selectedUserTasks()">
+      <app-task [task]="task" />
+    </li>
+  </ul>
+  <ng-template #fallback>
+    <p id="fallback">No tasks found.</p>
+  </ng-template>
+</section>
