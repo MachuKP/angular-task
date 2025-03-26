@@ -5,12 +5,9 @@ import {
   Output,
 } from '@angular/core';
 import { IUserInterface } from './user.model';
-import { CardComponent } from "../shared/card/card.component";
 
 @Component({
   selector: 'app-user',
-  standalone: true,
-  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })
